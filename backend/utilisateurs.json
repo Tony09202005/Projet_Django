@@ -1,0 +1,32 @@
+[
+{
+  "model": "boutique.utilisateur",
+  "pk": 1,
+  "fields": {
+    "prenom": "Admin",
+    "nom": "AutoShop",
+    "email": "admin@autoshop.local",
+    "telephone": "",
+    "mot_de_passe": "pbkdf2_sha256$1000000$O4RSafj9nwxrblUbYEYhgM$nb4sdwDLQ0naFr8ZYdjw+yVdUqxRIhr6jg9KKdTgUiQ=",
+    "role": "ADMIN",
+    "est_active": true,
+    "date_creation": "2026-10-22T17:17:41.859Z",
+    "date_modification": "2026-10-22T17:17:41.859Z"
+  }
+},
+{
+  "model": "boutique.utilisateur",
+  "pk": 2,
+  "fields": {
+    "prenom": "Client",
+    "nom": "Test",
+    "email": "client@autoshop.local",
+    "telephone": "",
+    "mot_de_passe": "pbkdf2_sha256$1000000$QIRFY2jOnNs5RP1r5sKYFA$T2tvqpwQz4jFT9HqLuBjaaJ/IinY7DwsuA+EX6iC5Ws=",
+    "role": "CLIENT",
+    "est_active": true,
+    "date_creation": "2026-10-22T17:17:42.630Z",
+    "date_modification": "2026-10-22T17:17:42.630Z"
+  }
+}
+]
