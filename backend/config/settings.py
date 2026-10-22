@@ -6,7 +6,6 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Configuration générale
 SECRET_KEY = os.environ.get(
     "SECRET_KEY",
     "cle-de-developpement-a-changer"
@@ -23,12 +22,10 @@ ALLOWED_HOSTS = [
     if host.strip()
 ]
 
-# Domaine attribué automatiquement par Render
 render_host = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 if render_host and render_host not in ALLOWED_HOSTS:
     ALLOWED_HOSTS.append(render_host)
 
-# Applications
 INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.staticfiles",
@@ -36,7 +33,6 @@ INSTALLED_APPS = [
     "boutique",
 ]
 
-# Middleware
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -44,11 +40,9 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
 ]
 
-# URLs
 ROOT_URLCONF = "config.urls"
 WSGI_APPLICATION = "config.wsgi.application"
 
-# Base de données : PostgreSQL sur Render, SQLite en local
 DATABASE_URL = os.environ.get("DATABASE_URL")
 
 if DATABASE_URL:
@@ -71,18 +65,15 @@ else:
         }
     }
 
-# Langue et fuseau horaire
 LANGUAGE_CODE = "fr-fr"
 TIME_ZONE = "UTC"
 USE_TZ = True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Fichiers statiques
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# Frontend React autorisé à appeler l'API
 CORS_ALLOWED_ORIGINS = [
     origin.strip()
     for origin in os.environ.get(
@@ -92,6 +83,5 @@ CORS_ALLOWED_ORIGINS = [
     if origin.strip()
 ]
 
-# Frais de livraison
 FRAIS_LIVRAISON = 100
 
