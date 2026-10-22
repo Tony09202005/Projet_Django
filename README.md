@@ -49,6 +49,5 @@ npm install
 copy .env.example .env
 npm run dev
 ```
-Le site est sur http://localhost:5173
 
 
